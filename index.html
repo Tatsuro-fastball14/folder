@@ -1,3 +1,16 @@
-aaaaaa
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>index</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <h1>index</h1>
+    <p>This is sample page!!</p>
+  </body>
+  </html>
 
-;;;;lllll
+  from http.server import simpleHTTPRequestHandler, HTTPServer
+
+  server = HTTPServer(('',8000)), simpleHTTPRequestHandler)
+  server.serve_forever()
