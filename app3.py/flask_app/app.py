@@ -16,7 +16,7 @@ if __name__=='__main__':
 
 @app.route('/<id>/<password>')
 def index2(id,  password):
-  msg = 'id:  %s,  password:  %s'%(id,password)
-  return  render_template('index.html',title="Index  with  Jinja", message=msg)
+  msg = 'id:taro ,  password:yamada  '(id,password)
+  return  render_template('index.html',title="Index with Jinja", message=msg)
 
 
