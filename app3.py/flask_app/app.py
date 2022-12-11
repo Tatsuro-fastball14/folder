@@ -14,6 +14,7 @@ def index2(id,  password):
   return  render_template('index.html',title="Index with Jinja", message=msg)
 
 
+
 if __name__=='__main__':
   app.debug = True
   app.run(host='localhost')
