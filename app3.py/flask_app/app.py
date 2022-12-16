@@ -23,7 +23,7 @@ def index():
 @app.route('/', methods=['post'])
 def form():
     Field = request.form['field']
-    return  render_template('index.html', title="Form sample",  message="こんにちは、さん!" field)
+    return  render_template('index.html', title="Form sample",  message="こんにちは、%さん!" % field)
 
 
 
