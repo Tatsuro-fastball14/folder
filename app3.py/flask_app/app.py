@@ -14,9 +14,17 @@ def index():
 
 @app.route('/', methods=['post'])
 def form():
-    field = request.form['field']
-    return  render_template('index.html', title="Form sample",  message="こんにちは、%さん!" % field)
+    ck  =   request.form.get('check')
+    rl  =   request.form.get('radio')
+    sel =   request.form.getlist('sel')
+    return  render_template('index.html',   title="Form sample",    message=[ck,rd,sel])
 
+
+
+
+
+    field = request.form['field']
+    return  render_template('index.html', title="Form sample",  message="こんにちは、%s さん!" % field)
 
 
 if __name__=='__main__':
