@@ -4,6 +4,8 @@ from  flask import  Flask,  render_template,  url_for
 from  flask import  Flask,  render_template,  request
 
 
+
+
 app = Flask(__name__)
 
 
@@ -15,7 +17,7 @@ def index():
 @app.route('/', methods=['post'])
 def form():
     ck  =   request.form.get('check')
-    rl  =   request.form.get('radio')
+    rd  =   request.form.get('radio')
     sel =   request.form.getlist('sel')
     return  render_template('index.html',   title="Form sample",    message=[ck,rd,sel])
 
