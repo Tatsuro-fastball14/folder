@@ -12,7 +12,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html',title='Template sample',message='これは、サンプルのページです.')
+    data =['one','Two','Three']
+    person = {'name':'Taro','mail':'taro@yamada'}
+    return render_template('index.html',title='Template sample',message='これは、サンプルのページです.',data=data,person= person)
     
 
 @app.route('/', methods=['post'])
