@@ -14,7 +14,7 @@ app = Flask(__name__)
 def index():
     data =['one','Two','Three']
     person = {'name':'Taro','mail':'taro@yamada'}
-    return render_template('index.html',title='Template sample',message='これは、サンプルのページです.',data=data,person= person)
+    return render_template('layout.html',title='Template sample',message='これは、サンプルのページです.',data=data,person= person)
     
 
 @app.route('/', methods=['post'])
@@ -22,7 +22,7 @@ def form():
     ck  =   request.form.get('check')
     rd  =   request.form.get('radio')
     sel =   request.form.getlist('sel')
-    return  render_template('index.html',   title="Form sample",    message=[ck,rd,sel])
+    return  render_template('layout.html',   title="Form sample",    message=[ck,rd,sel])
 
 
 
