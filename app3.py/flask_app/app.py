@@ -1,6 +1,26 @@
-from flask  import  Flask, render_template
+from flask import Flask, render_template
+from flask import request
 
-app =Flask(__name__)
+app = Flask(__name__)
+
+# トップ画面
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# get処理の入力フォームを表示
+@app.route("/request_get")
+def get():
+    return render_template('send_get.html')
+
+# getでの入力情報処理
+@app.route("/receive_get", methods=["GET"])
+def receive_get():
+    name = request.args["my_name"]
+    if len(name) == 0:
+        return "名前が未入力です"
+    else:
+         return 'あなたが入力した名前は' + str(name) + "です"
 
 @app.route('/')
 def test_jinja():
@@ -9,20 +29,6 @@ def test_jinja():
 
 
 
-@app.route('/test_ifa')
-def if_testa(name=None):
-    name='jiro'
-    return render_template('test_if.html',name=name)
-
-@app.route('/test_ifb')
-def if_testb(name=None):
-    name='sumijiro'
-    return  render_template('test_if.html',name=name)
-
-@app.route('/test_for')
-def test_for():
-    brothers=["太郎","次郎","三郎"]
-    return render_template('test_for.html',users=brothers)
 
 
 
